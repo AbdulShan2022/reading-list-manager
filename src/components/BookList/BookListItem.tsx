@@ -51,6 +51,7 @@ export const BookListItem: React.FC<BookListItemProps> = ({ book, style }) => {
           size="sm"
           onClick={handleAddToList}
           disabled={isInReadingList}
+          aria-label={`Add ${book.title} to reading list`}
         >
           {isInReadingList ? "Added" : "Add to List"}
         </Button>

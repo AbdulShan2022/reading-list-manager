@@ -52,10 +52,15 @@ export const SearchAndFilter: React.FC = () => {
           </div>
         </div>
         <div className="w-full md:w-58 relative">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="sortBy"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Sort by
           </label>
           <select
+            id="sortBy"
+            aria-label="Sort books by"
             value={state.sortBy}
             onChange={handleSortChange}
             style={{
@@ -75,10 +80,15 @@ export const SearchAndFilter: React.FC = () => {
           </span>
         </div>
         <div className="w-full md:w-58 relative">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="tagFilter"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Filter by Tag
           </label>
           <select
+            id="tagFilter"
+            aria-label="Filter books by tag"
             value={state.selectedTag ?? "all"}
             onChange={handleTagChange}
             style={{

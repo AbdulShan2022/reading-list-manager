@@ -64,6 +64,7 @@ export const ReadingListItem: React.FC<ReadingListItemProps> = ({ item }) => {
           size="sm"
           onClick={handleRemove}
           className="ml-4 flex-shrink-0"
+          aria-label={`Remove ${item.book.title} from reading list`}
         >
           <Trash2 size={16} />
         </Button>

@@ -25,23 +25,21 @@ export const BookList: React.FC = () => {
   const Row = ({
     index,
     style,
-    extraData,
   }: {
     index: number;
     style: React.CSSProperties;
-    extraData: boolean
-  }) => <BookListItem book={paginatedBooks[index]} style={extraData? style : style}/>;
+  }) => (
+    <div role="listitem">
+      <BookListItem book={paginatedBooks[index]} style={style} />
+    </div>
+  );
 
   if (isLoading) return <BookListSkeleton />;
 
   if (error)
     return (
-      <ErrorMessage
-        message="Failed to load books"
-        error={error.message}
-      />
+      <ErrorMessage message="Failed to load books" error={error.message} />
     );
-
 
   return (
     <div className="bg-white rounded-lg shadow p-4">
@@ -68,15 +66,16 @@ export const BookList: React.FC = () => {
             rowComponent={Row}
             rowCount={paginatedBooks.length}
             rowHeight={ITEM_HEIGHT}
-            rowProps={{a: ""} as any}
+            rowProps={{ a: "" } as any}
+            role="list"
           />
         </div>
       )}
-        <Pagination
-          currentPage={state.currentPage}
-          totalItems={filteredCount}
-          itemsPerPage={state.itemsPerPage}
-        />
+      <Pagination
+        currentPage={state.currentPage}
+        totalItems={filteredCount}
+        itemsPerPage={state.itemsPerPage}
+      />
     </div>
   );
 };
