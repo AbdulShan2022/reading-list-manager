@@ -26,7 +26,28 @@ Built with **React Query**, **Context API**, and **TailwindCSS**.
 
 ---
 
-# 3. Notes on Assumptions
+# 3. Installation
+```bash
+git clone https://github.com/your-username/reading-list-manager.git
+cd reading-list-manager
+npm install
+```
+
+Run locally
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5173
+
+Run Tests
+
+```bash
+npm test
+```
+
+# 4. Notes on Assumptions
 
 - Only **one user (`id=1`)** is supported for simplicity. Multi-user support would require authentication and backend changes.  
 - Filtering & sorting are done **client-side**. For real APIs, you’d offload this to the backend.  
@@ -36,7 +57,7 @@ Built with **React Query**, **Context API**, and **TailwindCSS**.
 
 ---
 
-# 4. Short Write-up
+# 5. Short Write-up
 
 ### Error & Retry Handling
 - **React Query** retries failed requests up to 2 times with exponential backoff (`retryDelay`).  
