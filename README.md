@@ -44,7 +44,13 @@ Open http://localhost:5173
 Run Tests
 
 ```bash
-npm test
+npm run test
+```
+
+Run cypress
+
+```bash
+npm run cypress:open
 ```
 
 # 4. Notes on Assumptions
