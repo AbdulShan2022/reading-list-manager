@@ -1,0 +1,7 @@
+{
+  "id": "1",
+  "name": "Demo",
+  "readingList": [
+    { "bookId": "1", "note": "Must-read introduction", "addedAt": "2023-01-01T00:00:00Z" }
+  ]
+}

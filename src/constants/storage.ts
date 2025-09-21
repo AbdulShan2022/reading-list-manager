@@ -1,0 +1,1 @@
+export const LOCAL_READING_LIST_KEY = "reading-list";
