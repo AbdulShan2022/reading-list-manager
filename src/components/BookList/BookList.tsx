@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import { List } from "react-window";
+import { FixedSizeList as List } from "react-window";
 import { useBooks } from "../../hooks/useBooks";
 import { useApp } from "../../contexts/useApp";
 import { BookListItem } from "./BookListItem";
@@ -25,10 +24,7 @@ export const BookList: React.FC = () => {
   const Row = ({
     index,
     style,
-  }: {
-    index: number;
-    style: React.CSSProperties;
-  }) => (
+  }: { index: number; style: React.CSSProperties;}) => (
     <div role="listitem">
       <BookListItem book={paginatedBooks[index]} style={style} />
     </div>
@@ -63,12 +59,13 @@ export const BookList: React.FC = () => {
       ) : (
         <div className="space-y-4">
           <List
-            rowComponent={Row}
-            rowCount={paginatedBooks.length}
-            rowHeight={ITEM_HEIGHT}
-            rowProps={{ a: "" } as any}
-            role="list"
-          />
+            itemCount={paginatedBooks.length}
+            height={(ITEM_HEIGHT + 14) * paginatedBooks.length }
+            itemSize={ITEM_HEIGHT}
+            width={'full'}
+          >
+            {Row}
+          </List>
         </div>
       )}
       <Pagination
